@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <title>Cuádricas en estación espacial</title>
+    <script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js"></script>
+  </head>
+  <body>
+    <a-scene embedded arjs="sourceType: webcam; debugUIEnabled: false;">
+      
+      <!-- Fondo tipo estación espacial -->
+      <a-sky src="https://cdn.aframe.io/360-image-gallery-space/space.jpg"></a-sky>
+
+      <!-- Elipsoide -->
+      <a-entity geometry="primitive: sphere; radius: 1"
+                material="color: blue; wireframe: true"
+                position="-2 1 -5"></a-entity>
+
+      <!-- Hiperboloide -->
+      <a-entity geometry="primitive: cylinder; radiusTop: 0.5; radiusBottom: 1.5; height: 3"
+                material="color: red; wireframe: true"
+                position="0 1 -5"></a-entity>
+
+      <!-- Paraboloide -->
+      <a-entity geometry="primitive: cone; radiusBottom: 1.5; height: 2"
+                material="color: green; wireframe: true"
+                position="2 1 -5"></a-entity>
+
+      <!-- Plano base -->
+      <a-plane rotation="-90 0 0" width="10" height="10" color="#444"></a-plane>
+
+      <!-- Cámara -->
+      <a-entity camera look-controls></a-entity>
+    </a-scene>
+  </body>
+</html>
